@@ -9,7 +9,7 @@ class TestApp(unittest.TestCase):
         response = self.app.get('/health') # Ruta mal nombrada
         self.assertEqual(response.status_code, 200) # Cambié el codigo de error sin querer, volver al "200" original
         data = response.get_json()
-        self.assertEqual(data['status'], 'ok')
+        self.assertEqual(data['status'], 'OK') # Mayusculas eran requeridas
 
     def test_hello_endpoint(self):
         response = self.app.get('/')
