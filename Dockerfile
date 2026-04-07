@@ -1,4 +1,5 @@
-FROM python:2.7
+FROM python:3.13
+# Usando la version instalada de Python
 
 WORKDIR /app
 
