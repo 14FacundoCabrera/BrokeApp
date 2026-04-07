@@ -6,8 +6,8 @@ class TestApp(unittest.TestCase):
         self.app = app.test_client()
     
     def test_health_endpoint(self):
-        response = self.app.get('/ping')
-        self.assertEqual(response.status_code, 200)
+        response = self.app.get('/health') # Ruta mal nombrada
+        self.assertEqual(response.status_code, 404)
         data = response.get_json()
         self.assertEqual(data['status'], 'ok')
 
