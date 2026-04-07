@@ -7,7 +7,7 @@ class TestApp(unittest.TestCase):
     
     def test_health_endpoint(self):
         response = self.app.get('/health') # Ruta mal nombrada
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 200) # Cambié el codigo de error sin querer, volver al "200" original
         data = response.get_json()
         self.assertEqual(data['status'], 'ok')
 
